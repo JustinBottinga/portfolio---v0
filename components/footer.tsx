@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <section className="mb-2">
+    <section className="mb-4">
       <footer className="mx-auto max-w-6xl">
         <div className="container mx-auto">
           <div className="relative rounded-3xl ring-inset p-4 sm:p-6 lg:p-8 ring-black/5 ring-1 overflow-hidden bg-gradient-to-br from-neutral-50 to-[#d4feee]/20 group">
@@ -23,7 +23,7 @@ export default function Footer() {
               }}
             />
 
-            <div className="p-4 sm:p-6 lg:p-8 relative z-10">
+            <div className="!pb-2 p-4 sm:p-6 lg:p-8 relative z-10 ">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div>
                   <h3 className="font-semibold mb-4">Contact</h3>
@@ -102,7 +102,7 @@ export default function Footer() {
                   </ul>
                 </div>
               </div>
-              <div className="mt-16 text-center text-gray-600">
+              <div className="mt-8 text-center text-gray-600">
                 <p>
                   © {new Date().getFullYear()} Justin Bottinga. All rights
                   reserved.
