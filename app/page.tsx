@@ -15,7 +15,7 @@ export default function Home() {
 
   useEffect(() => {
     // Show hero after a short delay
-    const heroTimer = setTimeout(() => setShowHero(true), 500);
+    const heroTimer = setTimeout(() => setShowHero(true), 400);
 
     // Show content after hero animation
     const contentTimer = setTimeout(() => setShowContent(true), 1300);
@@ -36,7 +36,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5 }}
               className="flex flex-col gap-8"
             >
               <About />

@@ -11,8 +11,8 @@ export default function Hero() {
     <motion.section
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="relative max-w-6xl mx-auto rounded-3xl ring-inset ring-black/5 ring-1 overflow-hidden bg-gradient-to-br from-neutral-50 to-[#d4f1fe]/80 group"
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="relative max-w-6xl mx-2 sm:mx-auto rounded-3xl ring-inset ring-black/5 ring-1 overflow-hidden bg-gradient-to-br from-neutral-50 to-[#d4f1fe]/80 group"
     >
       {/* First blur - top right (light blue) */}
       <div

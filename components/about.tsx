@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section className="relative max-w-6xl mx-auto" id="about">
+    <section className="relative max-w-6xl mx-2 sm:mx-auto" id="about">
       <div className="container">
         <div className="flex flex-col lg:flex-row gap-8 items-stretch">
           <div className="bg-gradient-to-br from-neutral-50 to-[#d4dffe]/20 ring-inset ring-black/5 ring-1 rounded-3xl p-4 lg:p-8 lg:w-1/2 flex flex-col">

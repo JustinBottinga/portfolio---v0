@@ -13,7 +13,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function Projects() {
   return (
-    <section className="relative mx-auto max-w-6xl" id="projects">
+    <section className="relative mx-2 sm:mx-auto max-w-6xl" id="projects">
       <div className="container">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
           {/* Project Card */}

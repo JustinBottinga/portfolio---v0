@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <section className="mb-4">
-      <footer className="mx-auto max-w-6xl">
+      <footer className="mx-2 sm:mx-auto  max-w-6xl">
         <div className="container mx-auto">
           <div className="relative rounded-3xl ring-inset p-4 sm:p-6 lg:p-8 ring-black/5 ring-1 overflow-hidden bg-gradient-to-br from-neutral-50 to-[#d4feee]/20 group">
             {/* First blur - top right (light blue) */}
