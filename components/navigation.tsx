@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 export default function Navigation() {
   useEffect(() => {
@@ -28,11 +29,23 @@ export default function Navigation() {
   }, []);
 
   return (
-    <section className="max-w-6xl mx-auto">
+    <motion.section
+      className="max-w-6xl mx-auto"
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <nav className="m-2 container mx-auto px-4 flex flex-row justify-end gap-8 font-semibold text-gray-700">
-        <Link href="#about">About</Link>
-        <Link href="#projects">Projects</Link>
+        <Link href="#about" className="hover:text-gray-950 transition-colors">
+          About
+        </Link>
+        <Link
+          href="#projects"
+          className="hover:text-gray-950 transition-colors"
+        >
+          Projects
+        </Link>
       </nav>
-    </section>
+    </motion.section>
   );
 }

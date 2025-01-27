@@ -1,13 +1,19 @@
+// Hero.tsx
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { Github, Linkedin, Mail } from "lucide-react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
 
 export default function Hero() {
   return (
-    <section className="relative max-w-6xl mx-auto rounded-3xl ring-inset ring-black/5 ring-1 overflow-hidden bg-gradient-to-br from-neutral-50 to-[#d4f1fe]/80 group">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="relative max-w-6xl mx-auto rounded-3xl ring-inset ring-black/5 ring-1 overflow-hidden bg-gradient-to-br from-neutral-50 to-[#d4f1fe]/80 group"
+    >
       {/* First blur - top right (light blue) */}
       <div
         className="absolute top-4 right-4 w-64 h-64 rounded-full opacity-50 blur-3xl"
@@ -38,7 +44,7 @@ export default function Hero() {
           <div className="mt-10 flex flex-wrap justify-start gap-4">
             <Button
               asChild
-              className="bg-neutral-950 text-white shadow-md hover:bg-neutral-600  rounded-full"
+              className="bg-neutral-950 text-white shadow-md hover:bg-neutral-600 transition-colors rounded-full"
             >
               <Link href="mailto:jbottinga@outlook.com">
                 <EmailIcon
@@ -54,7 +60,7 @@ export default function Hero() {
 
             <Button
               asChild
-              className="bg-white text-black hover:bg-blue-600 shadow-md hover:text-white rounded-full p-2"
+              className="bg-white text-black hover:bg-blue-600 shadow-md hover:text-white rounded-full transition-colors p-2"
             >
               <Link
                 href="https://linkedin.com/in/justin-bottinga"
@@ -72,7 +78,7 @@ export default function Hero() {
 
             <Button
               asChild
-              className="bg-white text-black hover:bg-slate-800 shadow-md hover:text-white  rounded-full p-2"
+              className="bg-white text-black hover:bg-slate-800 shadow-md hover:text-white transition-colors  rounded-full p-2"
             >
               <Link href="https://github.com/justinbottinga" target="_blank">
                 <GitHubIcon
@@ -87,6 +93,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
