@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Justin Bottinga - Software Developer",
   description:
     "Personal portfolio of Justin Bottinga, a student software developer from the Netherlands.",
+  icons: ["favicon.svg"],
   keywords: [
     "Web developer Twente",
     "Website laten maken Enschede",

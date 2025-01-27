@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="422" height="415" fill="none" viewBox="0 0 422 415">
+  <rect width="422" height="415" fill="#0F0C10" rx="100"/>
+  <g filter="url(#a)">
+    <path fill="url(#b)" d="M264.018 55.503c.315-2.306 3.649-2.306 3.964 0l14.396 105.368c2.129 15.577 14.12 27.972 29.619 30.614l79.439 13.543c2.218.379 2.218 3.565 0 3.944l-79.439 13.543c-15.499 2.642-27.49 15.037-29.619 30.614l-14.396 105.368c-.315 2.306-3.649 2.306-3.964 0l-14.084-103.081c-2.275-16.649-15.764-29.51-32.503-30.987L42.568 208.992c-2.432-.214-2.432-3.77 0-3.984l174.863-15.437c16.739-1.477 30.228-14.338 32.503-30.987l14.084-103.08Z"/>
+  </g>
+  <g filter="url(#c)">
+    <path fill="url(#d)" d="M264.018 55.503c.315-2.306 3.649-2.306 3.964 0l14.396 105.368c2.129 15.577 14.12 27.972 29.619 30.614l79.439 13.543c2.218.379 2.218 3.565 0 3.944l-79.439 13.543c-15.499 2.642-27.49 15.037-29.619 30.614l-14.396 105.368c-.315 2.306-3.649 2.306-3.964 0l-14.084-103.081c-2.275-16.649-15.764-29.51-32.503-30.987L42.568 208.992c-2.432-.214-2.432-3.77 0-3.984l174.863-15.437c16.739-1.477 30.228-14.338 32.503-30.987l14.084-103.08Z"/>
+  </g>
+  <defs>
+    <linearGradient id="b" x1="-43" x2="388" y1="144" y2="266" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FED3E9"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="d" x1="-43" x2="388" y1="144" y2="266" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FED3E9"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <filter id="a" width="364.355" height="318.452" x="34.744" y="47.774" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur result="effect1_foregroundBlur_1_16" stdDeviation="3"/>
+    </filter>
+    <filter id="c" width="354.355" height="308.452" x="39.744" y="52.774" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur result="effect1_foregroundBlur_1_16" stdDeviation=".5"/>
+    </filter>
+  </defs>
+</svg>
