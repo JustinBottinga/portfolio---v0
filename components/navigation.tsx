@@ -28,10 +28,11 @@ export default function Navigation() {
   }, []);
 
   return (
-    <nav className="max-w-6xl m-2 mx-auto flex flex-row justify-end gap-8 font-semibold text-gray-700">
-      <Link href="#about">About</Link>
-      <Link href="#projects">Projects</Link>
-      <Link href="#contact">Contact</Link>
-    </nav>
+    <section className="max-w-6xl mx-auto">
+      <nav className="m-2 container mx-auto px-4 flex flex-row justify-end gap-8 font-semibold text-gray-700">
+        <Link href="#about">About</Link>
+        <Link href="#projects">Projects</Link>
+      </nav>
+    </section>
   );
 }
