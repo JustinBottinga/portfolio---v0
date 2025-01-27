@@ -52,7 +52,7 @@ export default function Projects() {
           </Link>
 
           <div className="bg-gradient-to-bl from-neutral-50 to-[#d4feee]/20 ring-inset ring-black/5 ring-1 rounded-3xl p-4 lg:p-8 flex flex-col">
-            <h2 className="text-3xl font-bold tracking-tight">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               Want to see more?
             </h2>
             <div className="prose prose-lg mt-4">
