@@ -45,6 +45,9 @@ export default function Navigation() {
         >
           Projects
         </Link>
+        <Link href="#contact" className="hover:text-gray-950 transition-colors">
+          Contact
+        </Link>
       </nav>
     </motion.section>
   );

@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
+import { X } from "lucide-react";
 import {
   Form,
   FormControl,
@@ -18,7 +19,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { toast } from "@/components/ui/use-toast";
+// import { useToast } from "@/components/ui/use-toast"
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -37,6 +38,11 @@ const formSchema = z.object({
 
 export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [alertMessage, setAlertMessage] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
+  // const { toast } = useToast()
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -48,25 +54,68 @@ export default function ContactSection() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. We'll get back to you soon.",
+    setAlertMessage(null); // Clear any existing alert
+    try {
+      const response = await fetch("/api/send-mail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send email");
+      }
+
+      setAlertMessage({
+        type: "success",
+        message:
+          "Message sent successfully! Thank you for reaching out. We'll get back to you soon.",
       });
       form.reset();
-    }, 2000);
+    } catch (error) {
+      console.error("Error:", error);
+      setAlertMessage({
+        type: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "There was a problem sending your message. Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
-    <section className="mb-4">
+    <section className="" id="contact">
       <div className="mx-2 sm:mx-auto max-w-6xl">
         <div className="container mx-auto">
-          <div className="relative rounded-3xl ring-inset p-4 sm:p-6 lg:p-8 ring-black/5 ring-1 overflow-hidden bg-gradient-to-br from-neutral-50 to-[#d4ecfe]/60 group">
+          <div className="relative rounded-3xl ring-inset p-4 sm:p-6 lg:p-8 ring-black/5 ring-1 overflow-hidden bg-gradient-to-br from-[#fed4f4]/10 to-[#fef3d4]/20 group">
             <div className="relative z-10">
+              {alertMessage && (
+                <div
+                  className={`p-4 mb-4 rounded-md flex justify-between items-center ${
+                    alertMessage.type === "success"
+                      ? "bg-green-100 text-green-700"
+                      : "bg-red-100 text-red-700"
+                  }`}
+                >
+                  <span>{alertMessage.message}</span>
+                  <button
+                    onClick={() => setAlertMessage(null)}
+                    className="text-gray-500 hover:text-gray-700 transition-colors"
+                    aria-label="Close alert"
+                  >
+                    <X size={20} />
+                  </button>
+                </div>
+              )}
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -129,7 +178,9 @@ export default function ContactSection() {
                       name="contactPreference"
                       render={({ field }) => (
                         <FormItem className="space-y-3">
-                          <FormLabel>Who would you like to contact?</FormLabel>
+                          <FormLabel>
+                            How would you like to contact me?
+                          </FormLabel>
                           <FormControl>
                             <RadioGroup
                               onValueChange={field.onChange}
@@ -138,11 +189,11 @@ export default function ContactSection() {
                             >
                               <div className="flex items-center space-x-3">
                                 <RadioGroupItem value="justin" id="justin" />
-                                <Label htmlFor="justin">Justin Bottinga</Label>
+                                <Label htmlFor="justin">Personal mail</Label>
                               </div>
                               <div className="flex items-center space-x-3">
                                 <RadioGroupItem value="grufix" id="grufix" />
-                                <Label htmlFor="grufix">Grufix</Label>
+                                <Label htmlFor="grufix">Through Grufix</Label>
                               </div>
                             </RadioGroup>
                           </FormControl>
