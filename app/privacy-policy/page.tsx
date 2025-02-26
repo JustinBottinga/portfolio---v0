@@ -64,8 +64,8 @@ export default function PrivacyPolicy() {
           <div className="mt-4 space-y-6 text-gray-700">
             <p className="text-lg">
               Welcome to the less-boring-than-usual Privacy Policy! While most
-              people skip these (we get it), I've tried to make this one
-              actually readable. Let's dive in!
+              people skip these (I get it), I've tried to make this one actually
+              readable. Let's dive in!
             </p>
 
             <h2 className="text-2xl font-medium mt-8">
