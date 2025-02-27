@@ -68,7 +68,7 @@ export default function Projects() {
             target="_blank"
             className="flex-grow w-full md:w-[48%]"
           >
-            <div className="group relative rounded-3xl bg-gradient-to-b from-orange-500 to-amber-700 p-8 transition-all duration-500 flex flex-col h-full">
+            <div className="group relative rounded-3xl bg-gradient-to-b from-orange-400 to-amber-600 p-8 transition-all duration-500 flex flex-col h-full">
               {/* Header Section */}
               <div className="mb-6 flex justify-between items-start transition-all duration-500 group-hover:-translate-y-2 group-hover:scale-105">
                 <div>
@@ -79,7 +79,7 @@ export default function Projects() {
                     The ultimate JSON toolkit for developers
                   </p>
                 </div>
-                <div className="rounded-full bg-white p-2 transition-all duration-500 group-hover:scale-105 hover:bg-orange-400 hover:text-white">
+                <div className="rounded-full bg-white p-2 transition-all duration-500 group-hover:scale-105 hover:bg-orange-600 hover:text-white">
                   <ArrowUpRight />
                 </div>
               </div>
@@ -117,7 +117,9 @@ export default function Projects() {
           </div>
 
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/70"></div>
+          <div className="absolute inset-0 bg-purple-400/40"></div>
+
+          <div className="absolute inset-0 bg-gradient-to-tl from-black/70 to-black/95"></div>
 
           {/* Content */}
           <div className="relative z-10 p-4 lg:p-8 flex flex-col">
@@ -125,7 +127,7 @@ export default function Projects() {
               Want to see more?
             </h2>
             <div className="mt-4">
-              <p className="text-white/90 font-normal leading-relaxed text-lg">
+              <p className="text-slate-200 font-normal leading-relaxed text-lg">
                 I'm currently working on a few projects at{" "}
                 <Link
                   href="https://www.grufix.nl"
@@ -137,7 +139,7 @@ export default function Projects() {
                 </Link>
                 {". "}
               </p>
-              <p className="text-white/90 font-normal leading-relaxed text-lg">
+              <p className="text-slate-200 font-normal leading-relaxed text-lg">
                 Check it out to explore more of my current projects and see the
                 exciting work we're doing. Grufix is where I channel my
                 creativity and passion into meaningful projects—don't miss it!

@@ -97,6 +97,31 @@ export default function ContactSection() {
       <div className="mx-2 sm:mx-auto max-w-6xl">
         <div className="container mx-auto">
           <div className="relative rounded-3xl ring-inset p-4 sm:p-6 lg:p-8 ring-black/5 ring-1 overflow-hidden bg-gradient-to-br from-[#fed4f4]/10 to-[#fef3d4]/20 group">
+            {/* First blur - top right (orange) */}
+            <div
+              className="absolute -top-4 -right-32 w-64 h-64 rounded-full opacity-80 blur-[130px]"
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(255,165,0,0.7) 0%, rgba(255,140,0,0.5) 100%)",
+              }}
+            />
+            {/* First blur - bottom middle (pink) */}
+            <div
+              className="absolute -bottom-1/4 right-1/4 w-96 h-64 rounded-full opacity-80 blur-[130px]"
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(236,130,177,0.7) 0%, rgba(234,82,149,0.5) 100%)",
+              }}
+            />
+            {/* Second blur - bottom left (yellow) */}
+            <div
+              className="absolute -bottom-3 left-0 transform -translate-x-1/2 w-96 h-64 rounded-full opacity-80 blur-[130px]"
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(255,215,0,0.7) 0%, rgba(255,235,59,0.5) 100%)",
+              }}
+            />
+
             <div className="relative z-10">
               {alertMessage && (
                 <div
