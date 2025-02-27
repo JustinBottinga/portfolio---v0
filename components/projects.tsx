@@ -12,6 +12,16 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
 export default function Projects() {
+  // Array of placeholder images for the gallery background
+  const placeholderImages = [
+    "/projects/Frame 1.png",
+    "/projects/Frame 1-1.png",
+    "/projects/eHOEOI4RCokuBzKGTpwURpwJrM.png",
+    "/projects/AsaQTC5WpA4eRechCZXwmpBHjxU.png",
+    "/projects/txr3zIaNF1t7rRbZzpXVGvOQw.webp",
+    "/projects/V4OIc3mUh0YYEaxYFtdD0HgrWBs.jpg",
+  ];
+
   return (
     <section className="relative mx-2 sm:mx-auto max-w-6xl" id="projects">
       <div className="container flex flex-col gap-8">
@@ -91,27 +101,48 @@ export default function Projects() {
           </Link>
         </div>
 
-        <div className="bg-gradient-to-bl from-neutral-50 to-[#d4feee]/20 ring-inset ring-black/5 ring-1 rounded-3xl p-4 lg:p-8 flex flex-col">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Want to see more?
-          </h2>
-          <div className="prose prose-lg mt-4">
-            <p className="text-gray-700 font-normal leading-relaxed text-lg">
-              I'm currently working on a few projects at{" "}
-              <Link
-                href="https://www.grufix.nl"
-                target="_blank"
-                className="underline text-pink-600"
-              >
-                Grufix
-              </Link>
-              {". "}
-            </p>
-            <p className="text-gray-700 font-normal leading-relaxed text-lg">
-              Check it out to explore more of my current projects and see the
-              exciting work we’re doing. Grufix is where I channel my creativity
-              and passion into meaningful projects—don’t miss it!
-            </p>
+        <div className="relative rounded-3xl overflow-hidden">
+          {/* Gallery background */}
+          <div className="absolute inset-0 grid grid-cols-3 grid-rows-2 gap-1">
+            {placeholderImages.map((src, index) => (
+              <div key={index} className="relative w-full h-full">
+                <Image
+                  src={src || "/placeholder.svg"}
+                  alt={`Grufix project ${index + 1}`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/70"></div>
+
+          {/* Content */}
+          <div className="relative z-10 p-4 lg:p-8 flex flex-col">
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              Want to see more?
+            </h2>
+            <div className="mt-4">
+              <p className="text-white/90 font-normal leading-relaxed text-lg">
+                I'm currently working on a few projects at{" "}
+                <Link
+                  href="https://www.grufix.nl"
+                  target="_blank"
+                  className="relative underline text-pink-300 hover:text-pink-200 transition-colors inline-block"
+                >
+                  <span className="relative z-10">Grufix</span>
+                  <span className="absolute inset-0 bg-pink-500/30 blur-md rounded-lg"></span>
+                </Link>
+                {". "}
+              </p>
+              <p className="text-white/90 font-normal leading-relaxed text-lg">
+                Check it out to explore more of my current projects and see the
+                exciting work we're doing. Grufix is where I channel my
+                creativity and passion into meaningful projects—don't miss it!
+              </p>
+            </div>
           </div>
         </div>
       </div>
