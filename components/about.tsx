@@ -12,7 +12,7 @@ export default function About() {
             </h2>
             <div className="prose prose-lg overflow-y-auto flex-grow">
               <p className="text-gray-700 font-normal leading-relaxed text-lg">
-                My name is Justin Bottinga, a 20-year-old student currently
+                My name is Justin Bottinga, currently
                 pursuing a career in software development. Recently, I
                 co-founded an agency called{" "}
                 <Link
@@ -32,7 +32,7 @@ export default function About() {
           <div className="hidden lg:block lg:w-1/2">
             <div className="h-full relative">
               <Image
-                src="/74e9bac7-e9a1-4676-870d-e60a1ec732ce2.jpg"
+                src="/5dc33e3a-9270-4e05-9b61-fae8c09b361b.webp"
                 alt="Justin Bottinga"
                 layout="fill"
                 objectFit="cover"

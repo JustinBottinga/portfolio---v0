@@ -37,8 +37,8 @@ export default function Hero() {
             Justin Bottinga
           </h1>
           <p className="mt-6 text-lg leading-8 w-7/12 tracking-tight font-semibold text-gray-700">
-            A 20-year-old software development student from the Netherlands,
-            passionate about modern technologies and committed to continuously
+            A 21-year-old software developer based in the Netherlands. 
+            I'm passionate about modern technologies and committed to continuously
             expanding my skill set.
           </p>
           <div className="mt-10 flex flex-wrap justify-start gap-4">
